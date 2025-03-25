@@ -8,6 +8,7 @@ Death counter for OBS/Streamlabs
 1. Introduction
 
 - Ce guide explique comment intégrer un fichier HTML personnalisé dans Streamlabs OBS et OBS Studio pour afficher des overlays, widgets ou autres éléments interactifs.
+  
 
 2. Pré-requis
 
@@ -16,6 +17,7 @@ Death counter for OBS/Streamlabs
 - Un fichier HTML fonctionnel
 
 - Une connexion internet si le fichier dépend de ressources en ligne
+  
 
 3. Ajouter le fichier HTML dans OBS/Streamlabs
 
@@ -36,6 +38,7 @@ Death counter for OBS/Streamlabs
   - Activez "Interagir" si besoin d’interactivité
 
 - Appliquer et positionner l'élément
+  
 
 4. Problèmes fréquents et solutions
 
@@ -51,6 +54,7 @@ English Version
 1. Introduction
 
 - This guide explains how to integrate a custom HTML file into Streamlabs OBS and OBS Studio to display overlays, widgets, or other interactive elements.
+  
 
 2. Requirements
 
@@ -59,6 +63,7 @@ English Version
 - A functional HTML file
 
 - Internet connection if the file relies on online resources
+  
 
 3. Adding the HTML file to OBS/Streamlabs
 
@@ -79,6 +84,7 @@ English Version
   - Enable "Interact" if interaction is needed
 
 - Apply and position the element
+
 
 4. Common Issues and Solutions
 
