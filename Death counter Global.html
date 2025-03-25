@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            padding: 50px;
+        }
+        #streamDisplay {
+            font-size: 64px;
+            margin: 20px;
+            display: block; /* Affichage pour le stream | Show on stream */
+        }
+        #streamerDisplay {
+            display: none; /* Affichage pour le streamer masqué par défaut | Display for hidden streamer by default  */
+            margin-top: 20px;
+        }
+        button {
+            font-size: 24px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #ff4d4d;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff1a1a;
+        }
+        #toggleDisplay {
+            font-size: 18px;
+            color: #00ccff;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Death Counter</h1>
+    <div id="streamDisplay">Death counter: <span id="counter">0</span></div>
+    
+    <div id="streamerDisplay">
+        <h2>Streamer controls</h2>
+        <button onclick="incrementCounter()">+1</button>
+        <button onclick="decrementCounter()">-1</button>
+        <button onclick="resetCounter()">reset</button>
+    </div>
+
+    <div id="toggleDisplay" onclick="toggleDisplay()">Show/Hide Streamer Controls</div>
+
+    <script>
+        // Récupérer le compteur de morts depuis le stockage local | Retrieve death counter from local storage
+        let deathCount = localStorage.getItem('deathCount') ? parseInt(localStorage.getItem('deathCount')) : 0;
+
+        // Mettre à jour l'affichage initial | Update the initial display
+        document.getElementById('counter').innerText = deathCount;
+
+        function incrementCounter() {
+            deathCount++;
+            updateCounter();
+        }
+
+        function decrementCounter() {
+            if (deathCount > 0) {
+                deathCount--;
+                updateCounter();
+            }
+        }
+
+        function resetCounter() {
+            deathCount = 0;
+            updateCounter();
+        }
+
+        function updateCounter() {
+            document.getElementById('counter').innerText = deathCount;
+            localStorage.setItem('deathCount', deathCount); // Sauvegarder dans le stockage local | Save to local storage
+        }
+
+        function toggleDisplay() {
+            const streamerDisplay = document.getElementById('streamerDisplay');
+            streamerDisplay.style.display = streamerDisplay.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
